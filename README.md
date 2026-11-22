@@ -1,4 +1,4 @@
-# EdTech Learning Analytics: Student Performance, Engagement & Dropout Risk
+# Coaching Institute Learning Analytics: Student Performance, Engagement & Dropout Risk
 
 An end-to-end data analytics project on a coaching institute's learning platform (JEE / NEET / Foundation batches). It covers **SQL** data modelling and analysis, **Python** statistics and an early-warning model, and an **Excel** dashboard with a **Power BI** build guide. The goal is to find weak topics, measure how attendance and homework affect results, and identify students at risk of dropping out.
 
@@ -73,19 +73,19 @@ FROM weekly;
 ```
 
 ## Dashboard
-- **Excel:** `dashboard/EdTech_Dashboard.xlsx`. KPI tiles and band tables are live `COUNTIFS`/`AVERAGEIFS` formulas driven by **Program** and **Mode** drop-down filters. It includes charts for attendance, homework, weak topics and the weekly trend, plus an at-risk student list.
+- **Excel:** `dashboard/Coaching_Dashboard.xlsx`. KPI tiles and band tables are live `COUNTIFS`/`AVERAGEIFS` formulas driven by **Program** and **Mode** drop-down filters. It includes charts for attendance, homework, weak topics and the weekly trend, plus an at-risk student list.
 - **Power BI:** `dashboard/POWER_BI_GUIDE.md`. Covers the star-schema model, DAX measures and report layout.
 
 ## Project structure
 ```
-edtech-learning-analytics/
+coaching-learning-analytics/
 ├── data/
 │   ├── raw/            # generated CSVs (with deliberate data-quality issues)
 │   └── clean/          # cleaned CSVs used for analysis
 ├── sql/                # schema, views, 13 analysis queries, stored procedures
 ├── scripts/            # generate → clean → build DB → run queries → Excel dashboard
 ├── notebooks/
-│   └── edtech_analysis.ipynb   # full analysis with charts and model
+│   └── coaching_analysis.ipynb   # full analysis with charts and model
 ├── dashboard/          # Excel dashboard + Power BI guide
 ├── images/             # charts used in this README
 └── outputs/            # query results and at-risk student list (CSV)
@@ -96,10 +96,10 @@ edtech-learning-analytics/
 pip install -r requirements.txt
 python scripts/generate_data.py        # optional: data is already included
 python scripts/clean_data.py
-python scripts/build_database.py       # creates data/edtech.db (SQLite)
+python scripts/build_database.py       # creates data/coaching.db (SQLite)
 python scripts/run_queries.py          # runs all 13 SQL questions -> outputs/query_results/
 python scripts/build_excel_dashboard.py
-jupyter notebook notebooks/edtech_analysis.ipynb
+jupyter notebook notebooks/coaching_analysis.ipynb
 ```
 To use **MySQL** instead: run `01_schema.sql`, then `02_load_data_mysql.sql`, `03_views.sql` and `05_stored_procedures_mysql.sql`. The queries in `04` are written to run on both MySQL and SQLite; Q11 has a comment with the MySQL date syntax.
 
