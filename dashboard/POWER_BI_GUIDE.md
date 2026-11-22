@@ -1,7 +1,7 @@
 # Power BI Dashboard – Build Guide
 
 This guide rebuilds the Excel dashboard as an interactive Power BI report (about 1–2 hours).
-When it's done, save it as `dashboard/EdTech_Dashboard.pbix`, take a screenshot as
+When it's done, save it as `dashboard/Coaching_Dashboard.pbix`, take a screenshot as
 `images/powerbi_dashboard.png`, and add the screenshot to the main README.
 
 ## 1. Load the data
