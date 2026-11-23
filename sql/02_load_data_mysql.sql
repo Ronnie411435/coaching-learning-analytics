@@ -1,6 +1,6 @@
 -- =====================================================================
 -- 02_load_data_mysql.sql  |  Load the CLEANED CSVs into MySQL
--- Run from the repo root:  mysql --local-infile=1 -u root -p edtech_analytics < sql/02_load_data_mysql.sql
+-- Run from the repo root:  mysql --local-infile=1 -u root -p coaching_analytics < sql/02_load_data_mysql.sql
 -- (SET GLOBAL local_infile = 1; may be required once.)
 -- Loads data/clean/*.csv produced by the notebook / scripts/build_database.py
 -- =====================================================================
