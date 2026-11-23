@@ -1,5 +1,5 @@
 """
-Build an interactive Excel dashboard (dashboard/EdTech_Dashboard.xlsx).
+Build an interactive Excel dashboard (dashboard/Coaching_Dashboard.xlsx).
 KPIs and band tables are live Excel formulas (COUNTIFS / AVERAGEIFS) driven by
 a Program / Mode filter, so the dashboard updates when the filter changes.
 
@@ -17,8 +17,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "dashboard" / "EdTech_Dashboard.xlsx"
-con = sqlite3.connect(ROOT / "data" / "edtech.db")
+OUT = ROOT / "dashboard" / "Coaching_Dashboard.xlsx"
+con = sqlite3.connect(ROOT / "data" / "coaching.db")
 sql = (ROOT / "sql" / "04_analysis_queries.sql").read_text()
 def query_n(n):
     import re
@@ -90,7 +90,7 @@ d.sheet_properties.pageSetUpPr.fitToPage = True
 for c, w in zip("ABCDEFGHIJKLMN", [2, 22, 14, 3, 22, 14, 3, 22, 14, 3, 22, 14, 3, 3]):
     d.column_dimensions[c].width = w
 
-d["B2"] = "EdTech Learning Analytics Dashboard"; d["B2"].font = h1
+d["B2"] = "Coaching Institute Learning Analytics Dashboard"; d["B2"].font = h1
 d["B3"] = "Coaching-institute CBT, attendance & homework data | Jul–Dec 2025 | synthetic data"; d["B3"].font = muted
 
 # filters
@@ -204,7 +204,7 @@ d["B64"].font = Font(name=F, bold=True, color="C00000")
 ab = wb.create_sheet("About")
 lines = [
     ("About this workbook", h1),
-    ("Source: data/edtech.db built from synthetic data (scripts/generate_data.py, seed 42). All names are fictional.", body),
+    ("Source: data/coaching.db built from synthetic data (scripts/generate_data.py, seed 42). All names are fictional.", body),
     ("Student_Data = SQL view v_student_summary (one row per student).", body),
     ("Topics = view v_topic_performance · Weekly_Trend = query Q6 · Teachers = Q7 · At_Risk_Students = Q9.", body),
     ("Dashboard KPIs use COUNTIFS / AVERAGEIFS on Student_Data, filtered by the yellow Program and Mode cells.", body),
