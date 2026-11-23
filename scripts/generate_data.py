@@ -1,5 +1,5 @@
 """
-Generate a synthetic (but realistic) dataset for an EdTech coaching platform.
+Generate a synthetic (but realistic) dataset for a coaching institute's learning platform.
 
 The data mimics a coaching institute running JEE / NEET / Foundation batches
 with weekly Computer-Based Tests (CBTs), daily attendance and homework.
