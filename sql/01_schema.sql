@@ -1,11 +1,11 @@
 -- =====================================================================
--- EdTech Learning Analytics  |  01_schema.sql
+-- Coaching Institute Learning Analytics  |  01_schema.sql
 -- Relational schema for a coaching-institute learning platform.
 -- Written for MySQL 8.0+ (also runs on SQLite via scripts/build_database.py)
 -- =====================================================================
 
--- CREATE DATABASE IF NOT EXISTS edtech_analytics;
--- USE edtech_analytics;
+-- CREATE DATABASE IF NOT EXISTS coaching_analytics;
+-- USE coaching_analytics;
 
 DROP TABLE IF EXISTS homework_submissions;
 DROP TABLE IF EXISTS homework;
