@@ -1,5 +1,5 @@
 """
-Build a local SQLite database (data/edtech.db) from the cleaned CSVs,
+Build a local SQLite database (data/coaching.db) from the cleaned CSVs,
 using the same schema and views as the MySQL version.
 
 Run:  python scripts/build_database.py
@@ -9,7 +9,7 @@ import sqlite3
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DB = ROOT / "data" / "edtech.db"
+DB = ROOT / "data" / "coaching.db"
 ORDER = ["schools", "teachers", "batches", "batch_subject_teacher", "topics", "students",
          "attendance", "tests", "test_results", "homework", "homework_submissions"]
 
